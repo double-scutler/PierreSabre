@@ -17,7 +17,7 @@ public class Humain {
 	public int getArgent() {
 		return argent;
 	}
-	private String parler() {
+	protected String parler() {
 		String texte = "("+nom+") - ";
 		return texte;
 	}
