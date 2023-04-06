@@ -17,16 +17,16 @@ public class Humain {
 	public int getArgent() {
 		return argent;
 	}
-	protected String parler() {
-		String texte = "("+nom+") - ";
-		return texte;
+	protected void parler(String texte) {
+		System.out.println( "("+nom+") - "+texte);
+		
 	}
 	public void direBonjour() {
-		System.out.println(parler()+"Bonjour ! je m'appele "+nom+" et j'aime boire du "+boissonFavorite);
+		parler("Bonjour ! je m'appele "+nom+" et j'aime boire du "+boissonFavorite);
 		
 	}
 	public void boire() {
-		System.out.println(parler()+"Mmmm, un bon verre de "+boissonFavorite+" ! GLOUPS !");
+		parler("Mmmm, un bon verre de "+boissonFavorite+" ! GLOUPS !");
 	}
 	public void gagnerArgent(int gain) {
 		argent+=gain;
@@ -37,10 +37,10 @@ public class Humain {
 	}
 	public void acheter(String bien,int prix) {
 		if (argent>=prix) {
-			System.out.println(parler()+"j'ai "+argent+" sous en poche. je vais pouvoir m'offrir "+bien+" à "+prix+" sous");
+			parler("j'ai "+argent+" sous en poche. je vais pouvoir m'offrir "+bien+" à "+prix+" sous");
 			perdreArgent(prix);
 		} else {
-			System.out.println(parler()+"je n'ai plus que "+argent+" sous en poche. je ne peux meme pas m'offrir "+bien+" à "+prix+" sous");
+			parler("je n'ai plus que "+argent+" sous en poche. je ne peux meme pas m'offrir "+bien+" à "+prix+" sous");
 		}
 	}
 	
